@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
@@ -23,6 +23,16 @@
     <Content Remove="Services\XMLParserService.Tests\**" />
     <EmbeddedResource Remove="Services\XMLParserService.Tests\**" />
     <None Remove="Services\XMLParserService.Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\app\components\xmlparser\xmlparser.component.ts" />
+    <None Remove="ClientApp\app\services\xmlparser.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\xmlparser\xmlparser.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\xmlparser.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
